@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  keycloak: {
+    "realm": "localrealm",
+    "auth-server-url": "http://localhost:8081/auth/",
+    "ssl-required": "external",
+    "resource": "angular-test",
+    "public-client": true,
+    "verify-token-audience": true,
+    "use-resource-role-mappings": true,
+    "confidential-port": 0
+  }
 };
 
 /*

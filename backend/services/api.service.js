@@ -1,12 +1,13 @@
 const ApiGateway = require('moleculer-web');
 const KeycloakBearer = require('../middlewares/keycloak');
+const config = require('../keycloak.json')
 
 const keycloak = new KeycloakBearer({
-  baseUrl: 'http://localhost:8081/',
-  clientId: 'backend-test',
-  clientSecret: 'ZbLOUKgtUn0w2gjqX9z0Jthb11UuDnDi',
-  audience: 'backend-test',
-  realm: 'localrealm',
+  baseUrl: config['auth-server-url'],
+  clientId: config.resource,
+  clientSecret: config.credentials.secret,
+  audience: config.resource,
+  realm: config.realm,
 })
 
 module.exports = {

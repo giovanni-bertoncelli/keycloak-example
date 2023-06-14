@@ -3,6 +3,10 @@
   "auth-server-url": "http://localhost:8081/auth/",
   "ssl-required": "external",
   "resource": "backend-test",
-  "public-client": true,
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": "***"
+  },
+  "use-resource-role-mappings": true,
   "confidential-port": 0
 }
