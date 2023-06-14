@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "moleculer-runner --repl --hot services"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "jose": "^4.14.4",
+    "moleculer": "^0.14.29",
+    "moleculer-web": "^0.10.5",
+    "openid-client": "^5.4.2",
+    "passport-openidconnect": "^0.1.1"
+  },
+  "devDependencies": {
+    "moleculer-cli": "^0.8.1"
+  }
+}
