@@ -3,7 +3,7 @@ const KeycloakBearer = require('../middlewares/keycloak');
 const config = require('../keycloak.json')
 
 const keycloak = new KeycloakBearer({
-  baseUrl: config['auth-server-url'],
+  authServerUrl: config['auth-server-url'],
   clientId: config.resource,
   clientSecret: config.credentials.secret,
   audience: config.resource,

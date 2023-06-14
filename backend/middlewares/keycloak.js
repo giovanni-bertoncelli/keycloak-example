@@ -33,7 +33,7 @@ class MemoryTTLCache {
 
 class KeycloakBearer {
   constructor({
-    baseUrl,
+    authServerUrl,
     realm,
     clientId,
     clientSecret,
@@ -45,7 +45,7 @@ class KeycloakBearer {
   }) {
     this.cache = new MemoryTTLCache();
     this.config = {
-      baseUrl,
+      authServerUrl,
       realm,
       clientId,
       clientSecret,
@@ -55,12 +55,13 @@ class KeycloakBearer {
       enableCache,
       cacheRetention
     }
+    console.log(this.config)
   }
 
   get oidcBaseUrl() {
     return new URL(
-      `/realms/${this.config.realm}`,
-      this.config.baseUrl
+      `/auth/realms/${this.config.realm}`,
+      this.config.authServerUrl
     ).toString();
   }
 

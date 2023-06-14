@@ -10,6 +10,10 @@
 - Salva la configurazione OIDC JSON all'interno di `keycloak.json`
 - Creare un ruolo globale nel realm e aggiungere al ruolo entrambi i ruoli delle rispettive app create. Questo permetterà di avere l'audience corretta da verificare lato backend.
 
+Oppure:
+
+- Importa il file `realm-export.json` dentro Keycloak come nuovo realm
+
 ### Backend
 
 Prerequisiti: Node 14

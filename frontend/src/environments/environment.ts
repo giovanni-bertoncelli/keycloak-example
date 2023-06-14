@@ -8,7 +8,7 @@ export const environment = {
     "realm": "localrealm",
     "auth-server-url": "http://localhost:8081/auth/",
     "ssl-required": "external",
-    "resource": "angular-test",
+    "resource": "demo-frontend",
     "public-client": true,
     "verify-token-audience": true,
     "use-resource-role-mappings": true,

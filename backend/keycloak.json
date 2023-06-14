@@ -2,10 +2,10 @@
   "realm": "localrealm",
   "auth-server-url": "http://localhost:8081/auth/",
   "ssl-required": "external",
-  "resource": "backend-test",
+  "resource": "demo-backend",
   "verify-token-audience": true,
   "credentials": {
-    "secret": "***"
+    "secret": "ZbLOUKgtUn0w2gjqX9z0Jthb11UuDnDi"
   },
   "use-resource-role-mappings": true,
   "confidential-port": 0
