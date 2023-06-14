@@ -59,7 +59,7 @@ class KeycloakBearer {
 
   get oidcBaseUrl() {
     return new URL(
-      `/auth/realms/${this.config.realm}`,
+      `/realms/${this.config.realm}`,
       this.config.baseUrl
     ).toString();
   }
