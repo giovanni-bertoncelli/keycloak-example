@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { UnauthComponent } from './pages/unauth/unauth.component';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -25,7 +26,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, UnauthComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,

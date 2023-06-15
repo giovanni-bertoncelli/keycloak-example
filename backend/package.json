@@ -11,11 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.4.0",
+    "express-session": "^1.17.3",
     "jose": "^4.14.4",
     "moleculer": "^0.14.29",
     "moleculer-web": "^0.10.5",
     "openid-client": "^5.4.2",
+    "passport": "^0.6.0",
+    "passport-http-bearer": "^1.0.1",
     "passport-openidconnect": "^0.1.1"
   },
   "devDependencies": {
