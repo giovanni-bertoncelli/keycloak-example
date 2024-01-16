@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { KeycloakEventType, KeycloakService } from 'keycloak-angular';
-import { Subscription, concatMap } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -20,17 +20,14 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/api/hello')
-      .pipe(concatMap(() => this.http.get('http://localhost:3000/api/hello')))
-      .subscribe({ next: console.log, error: console.error });
+    this.fetch();
 
     this.subs.add(
       this.keycloak.keycloakEvents$.subscribe((event) => {
         if (event.type === KeycloakEventType.OnTokenExpired) {
           this.keycloak.updateToken(20)
             .then(() => {
-              this.http.get('http://localhost:3000/api/hello')
-                .subscribe({ next: console.log, error: console.error });
+              this.fetch();
             })
             .catch(console.error);
         }
@@ -43,4 +40,14 @@ export class HomeComponent implements OnInit {
       .catch(console.error);
   }
 
+  fetch() {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.keycloak.getKeycloakInstance().token || ''}`
+    });
+
+    // this.http.get('http://localhost:3000/api/hello')
+    this.http.get('http://localhost:3002/api/diagnostic', {
+      headers
+    }).subscribe({ next: console.log, error: console.error });
+  }
 }
